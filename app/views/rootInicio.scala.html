@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/reportes.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/reportes.css" />
+	    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+
+    <title>ROOT</title>
+</head>
+<body>
+	<header>
+		<h1>OPCIONES</h1>
+	</header>
+	<main>
+		<div class="container">
+			<h2><li> <a href="@routes.AdminController.insertar" class="btn btn-primary btn-lg active" >Insertar informacion</a></li></h2>
+			<h2><li> <a href="@routes.AdminController.modificar" class="btn btn-primary btn-lg active">Modificar informacion</a></li></h2>
+			<h2><li> <a href="@routes.AdminController.eliminar" class="btn btn-primary btn-lg active" >Eliminar informacion</a></li></h2>
+			<h2><li> <a href="@routes.AdminController.reportes" class="btn btn-primary btn-lg active" >Visualizar reportes</a></li></h2>
+		</div>
+	</main>
+
+	<footer>
+		<h2><p id="regresar"> <a href="@routes.LoginController.login">Cerrar Sesion </a></p></h2>
+	</footer>
+</body>
+</html>

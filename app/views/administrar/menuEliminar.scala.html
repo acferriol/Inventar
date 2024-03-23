@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="UTF-8">
+    	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/reportes.css")">
+    	<link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/reportes.css" />
+    	<link rel = "stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+    	<title>Opciones de Eliminacion</title>
+	</head>
+	<body>
+		<header>
+    		<h1>Seleccione que desea Eliminar</h1>
+		</header>
+
+		<main>
+
+			<div class = "container">
+				<h2><li> <a class="btn btn-success" href="@routes.ElimController.eliminarTrabajador">
+    			<i class="glyphicon glyphicon-minus-sign"></i>
+    			Eliminar Trabajador</a></li></h2>
+				<h2><li> <a class="btn btn-success" href="@routes.ElimController.eliminarLocal">
+    			<i class="glyphicon glyphicon-minus-sign"></i>
+    			Eliminar Local</a></li></h2>
+				<h2><li> <a class="btn btn-success" href="@routes.ElimController.eliminarDepartamento">
+    			<i class="glyphicon glyphicon-minus-sign"></i>
+    			Eliminar Departamento</a></li></h2>
+				<h2><li> <a class="btn btn-success" href="@routes.ElimController.eliminarArticulo">
+    			<i class="glyphicon glyphicon-minus-sign"></i>
+    			Eliminar Articulo</a></li></h2>
+			</div>
+		</main>
+	
+		<footer>
+    		<h2><p id="regresar"> <a href="@routes.AdminController.inicioRoot">volver a opciones<<< </a></p></h2>
+		</footer>
+
+	</body>
+
+</html>

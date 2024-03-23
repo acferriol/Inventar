@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="UTF-8">
+    	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/reportes.css")">
+    	<link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/reportes.css" />
+    	<link rel = "stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+    	<title>Opciones de Modificacion</title>
+	</head>
+
+	<body>
+
+		<header>
+    		<h1>Seleccione que desea modificar</h1>
+		</header>
+
+
+		<main>
+			<div class = "container">
+    			<h2><li> <a class="btn btn-success" href="@routes.ModifController.modificarTrabajador">
+        		<i class="glyphicon glyphicon-minus-sign"></i>
+        		Modificar Trabajador</a></li></h2>
+	    		<h2><li> <a class="btn btn-success" href="@routes.ModifController.modificarLocal">
+    	    	<i class="glyphicon glyphicon-minus-sign"></i>
+        		Modificar Local</a></li></h2>
+    			<h2><li> <a class="btn btn-success" href="@routes.ModifController.modificarDepartamento">
+	        	<i class="glyphicon glyphicon-minus-sign"></i>
+    	    	Modificar Departamento</a></li></h2>
+    			<h2><li> <a class="btn btn-success" href="@routes.ModifController.modificarArticulo">
+        		<i class="glyphicon glyphicon-minus-sign"></i>
+	        	Modificar Articulo</a></li></h2>
+			</div>
+		</main>
+		<footer>
+    		<h2><p id="regresar"> <a href="@routes.AdminController.inicioRoot">volver a opciones<<< </a></p></h2>
+		</footer>
+	
+	</body>
+</html>

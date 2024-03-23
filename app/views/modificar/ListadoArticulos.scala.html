@@ -1,0 +1,42 @@
+@(list:List[models.articulo])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tablas.css")">
+  <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/tablas.css" />
+  <title>Listado de Articulos</title>
+</head>
+<body>
+    <header>
+        <h2><p id="regresar"> <a href="@routes.AdminController.modificar">volver<<< </a></p></h2>
+    </header>
+
+<table>
+  <tr>
+    <th><h3>Codigo</h3></th>
+    <th><h3>Nombre</h3></th>
+    <th><h3>Descripcion</h3></th>
+    <th><h3>Estado</h3></th>
+    <th><h3>Valor</h3></th>
+    <th><h3>Fecha Ult. Mantenimiento</h3></th>
+    <th><h3>Fecha Prox. Mantenimiento</h3></th>
+    <th><h3>Responsable</h3></th>
+    <th><h3>Ubicacion</h3></th>
+  </tr>
+  @for(x <- list){
+  <tr>
+    <td><h4><a href="@routes.ModifController.detalleArticulo(x.cod_art)">@x.cod_art</a></h4></td>
+    <td><h4>@x.nombre_art</h4></td>
+    <td><h4>@x.descripcion_art</h4></td>
+    <td><h4>@x.estado_art</h4></td>
+    <td><h4>@x.valor_aprox</h4></td>
+    <td><h4>@x.f_ult_mto</h4></td>
+    <td><h4>@x.f_prox_mto</h4></td>
+    <td><h4>@x.responsable</h4></td>
+    <td><h4>@x.ubicacion</h4></td>
+  </tr>
+  }
+</table>
+</body>
+</html>

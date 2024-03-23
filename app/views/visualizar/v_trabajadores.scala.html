@@ -1,0 +1,40 @@
+@(url:String,list:List[models.trabajador])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tablas.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/tablas.css" />
+    <title>Lista Trabajadores</title>
+</head>
+<body>
+<header>
+    <h3><a href=@url>volver<<<</a></h3>
+</header>
+
+<table>
+    <tr>
+        <th><h3>Carnet</h3></th>
+        <th><h3>Nombre</h3></th>
+        <th><h3>Apellidos</h3></th>
+        <th><h3>Direccion</h3></th>
+        <th><h3>Telefono</h3></th>
+        <th><h3>Sexo</h3></th>
+        <th><h3>Pertenece a</h3></th>
+        <th><h3>Trabaja en</h3></th>
+    </tr>
+    @for(x <- list){
+    <tr>
+        <td><h4>@x.ct</h4></td>
+        <td><h4>@x.nombre</h4></td>
+        <td><h4>@x.apellidos</h4></td>
+        <td><h4>@x.direccion</h4></td>
+        <td><h4>@x.telefono</h4></td>
+        <td><h4>@x.sexo</h4></td>
+        <td><h4>@x.nombre_dpto</h4></td>
+        <td><h4>@x.loc_trab</h4></td>
+    </tr>
+    }
+</table>
+</body>
+</html>

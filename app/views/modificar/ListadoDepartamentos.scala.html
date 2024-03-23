@@ -1,0 +1,29 @@
+@(list:List[models.departamento])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tablas.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/tablas.css" />
+    <title>Listado de Departamentos</title>
+</head>
+<body>
+<header>
+    <h2><p id="regresar"> <a href="@routes.AdminController.modificar">volver<<< </a></p></h2>
+</header>
+<table>
+    <tr>
+        <th><h3>Nombre Dpto</h3></th>
+        <th><h3>Objetivo</h3></th>
+        <th><h3>Lider Dpto</h3></th>
+    </tr>
+    @for(x <- list){
+    <tr>
+        <td><h4><a href="@routes.ModifController.detalleDepartamento(x.nombre_dpto)">@x.nombre_dpto</a></h4></td>
+        <td><h4>@x.objetivo</h4></td>
+        <td><h4>@x.lider</h4></td>
+    </tr>
+    }
+</table>
+</body>
+</html>

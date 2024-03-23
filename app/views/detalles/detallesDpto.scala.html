@@ -1,0 +1,44 @@
+@(dpto:models.departamento,form: Form[models.departamento],trab:List[(String,String)])(implicit request: MessagesRequestHeader,flash: Flash)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/insertar.css")">
+        <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/insertar.css" />
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <title>Actualizar Departamento</title>
+    </head>
+    <body>
+        @if(form.hasGlobalErrors) {
+            @form.globalErrors.map { error: FormError =>
+            <div>
+            @error.key: @error.message
+            </div>
+            }
+        }
+        <header>
+            <h2><p id="regresar"> <a href="@routes.ModifController.modificarDepartamento">volver<<< </a></p></h2>
+        </header>
+
+	    <main>
+            <div id="msgs">
+                <h3>@flash.get("success").getOrElse("Edite Departamento")</h3>
+                <h3>@flash.get("error").getOrElse("")</h3>
+            </div>
+            <div class="box">
+                @helper.form(routes.ModifController.updateDepartamento(dpto.nombre_dpto)) {
+                <h1>Modificar Departamento</h1>
+                @helper.CSRF.formField
+                <div id="esencial">
+                    @helper.inputText(form("nombre").copy(value=Some(dpto.nombre_dpto)))
+                    @helper.textarea(form("objetivo").copy(value=Some(dpto.objetivo)))
+                    @helper.select(form("al frente").copy(value=Some(dpto.lider)),
+                    options = trab)
+                </div>
+
+                <button class="btn btn-success">Modificar</button>
+                }
+            </div>
+	    </main>
+    </body>
+</html>

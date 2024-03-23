@@ -1,0 +1,49 @@
+@(list:List[models.departamento],form: Form[models.listaDel])(implicit request: MessagesRequestHeader,flash: Flash)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tablas.css")">
+        <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/tablas.css" />
+        <title>Eliminar Departamentos</title>
+    </head>
+    <body>
+        <header>
+            <h2><p id="regresar"> <a href="@routes.AdminController.eliminar">volver<<< </a></p></h2>
+        </header>
+        <main>
+            @helper.form(routes.ElimController.deleteDepartamento) {
+            @helper.CSRF.formField
+            <button>Eliminar</button>
+            <div id="msgs">
+                <h3>@flash.get("success").getOrElse("Seleccione los que desee eliminar")</h3>
+                <h3>@flash.get("error").getOrElse("")</h3>
+            </div>
+            <table>
+
+                <tr>
+                    <th><h3>Indice</h3></th>
+                    <th><h3>Seleccionar</h3></th>
+                    <th><h3>Nombre</h3></th>
+                    <th><h3>Objetivo</h3></th>
+                </tr>
+
+
+                @helper.repeatWithIndex(form("sels"),min=list.length){(selField,index) =>
+                <tr>
+                    <td><h4>@helper.inputText(selField("index").copy(value=Some((index+1).toString)),
+                        Symbol("_label") -> "",Symbol("size") -> 3,
+                        Symbol("id") -> "test",
+                        Symbol("readonly")-> true)</h4></td>
+                    <td>@helper.checkbox(selField("sel"),Symbol("_label") -> "select")</td>
+                    <td>@list(index).nombre_dpto</td>
+                    <td>@list(index).objetivo</td>
+                </tr>
+                }
+
+            </table>
+            }
+        </main>
+
+    </body>
+</html>

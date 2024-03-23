@@ -1,0 +1,29 @@
+@(list:List[models.local])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tablas.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/tablas.css" />
+    <title>Lista de Locales</title>
+</head>
+<body>
+<header>
+    <h2><p id="regresar"> <a href="@routes.AdminController.modificar">volver<<< </a></p></h2>
+</header>
+<table>
+  <tr>
+    <th><h3>Codigo</h3></th>
+    <th><h3>Nombre</h3></th>
+    <th><h3>Tipo</h3></th>
+  </tr>
+  @for(x <- list){
+  <tr>
+    <td><h4><a href="@routes.ModifController.detalleLocal(x.cod_local)">@x.cod_local</a></h4></td>
+    <td><h4>@x.nombre_local</h4></td>
+    <td><h4>@x.tipo_local</h4></td>
+  </tr>
+  }
+</table>
+</body>
+</html>

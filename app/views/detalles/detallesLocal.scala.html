@@ -1,0 +1,43 @@
+@(loc:models.local,form: Form[models.local])(implicit request: MessagesRequestHeader,flash: Flash)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/insertar.css")">
+        <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/insertar.css" />
+	    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <title>Actualizar Local</title>
+    </head>
+    <body>
+        @if(form.hasGlobalErrors) {
+            @form.globalErrors.map { error: FormError =>
+            <div>
+            @error.key: @error.message
+            </div>
+            }
+        }
+        <header>
+            <h2><p id="regresar"> <a href="@routes.ModifController.modificarLocal">volver<<< </a></p></h2>
+        </header>
+
+        <main>
+            <div id="msgs">
+                <h3>@flash.get("success").getOrElse("Edite local")</h3>
+                <h3>@flash.get("error").getOrElse("")</h3>
+            </div>
+            <div class="box">
+                @helper.form(routes.ModifController.updateLocal(loc.cod_local)) {
+                <h1>Modificar Local</h1>
+                @helper.CSRF.formField
+                <div id="datos">
+                    @helper.inputText(form("cod_local").copy(value=Option(loc.cod_local)))
+                    @helper.inputText(form("nombre_local").copy(value=Some(loc.nombre_local)))
+                    @helper.select(form("tipo_local").copy(value=Option(loc.tipo_local)),
+                    options = Seq(loc.tipo_local->loc.tipo_local, "laboratorio"->"laboratorio","oficina"->"oficina","descanso"->"descanso").distinct)
+                </div>
+                <button class="btn btn-secondary">Modificar</button>
+                }
+            </div>
+	    </main>
+    </body>
+</html>

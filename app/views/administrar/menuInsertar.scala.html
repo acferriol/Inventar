@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="UTF-8">
+    	<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/reportes.css")">
+    	<link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/reportes.css" />
+    	<link rel = "stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+    	<title>Menu Insercion</title>
+	</head>
+	
+	<body>
+	
+		<header>
+    		<h1>Seleccione que desea insertar</h1>
+		</header>
+
+		<main>
+			<div class = "container">
+    			<h2><li> <a class="btn btn-success" href="@routes.InsertController.nuevoTrabajador">
+        		<i class="glyphicon glyphicon-plus-sign"></i>
+        		Insertar Trabajador</a></li></h2>
+    			<h2><li> <a class="btn btn-success" href="@routes.InsertController.nuevoLocal">
+        		<i class="glyphicon glyphicon-plus-sign"></i>
+        		Insertar Local</a></li></h2>
+    			<h2><li> <a class="btn btn-success" href="@routes.InsertController.nuevoDepartamento">
+        		<i class="glyphicon glyphicon-plus-sign"></i>
+        		Insertar Departamento</a></li></h2>
+    			<h2><li> <a class="btn btn-success" href="@routes.InsertController.nuevoArticulo">
+        		<i class="glyphicon glyphicon-plus-sign"></i>
+        		Insertar Articulo</a></li></h2>
+			</div>
+		</main>
+
+
+		<footer>
+    		<h2><p id="regresar"> <a href="@routes.AdminController.inicioRoot">volver a opciones<<< </a></p></h2>
+		</footer>
+
+
+	</body>
+
+</html>

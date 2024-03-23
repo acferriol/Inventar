@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/reportes.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/reportes.css" />
+    <link rel = "stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+    <link rel = "stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/style.css")">
+
+    <title>Bienvenido Usuario</title>
+</head>
+
+<body>
+    <header>
+        <h1>Ver Reporte de:</h1>
+    </header>
+    <main>
+        <div class="container">
+
+            <h2><li><a class="btn btn-success" href="@routes.ReportesController.reporteDepartamentosUser">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Departamentos de la entidad
+            </a></li></h2>
+
+            <h2><li><a class="btn btn-success" href="@routes.ReportesController.reporteHistorialUser">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Historial de articulos
+            </a></li></h2>
+            <h2><li><a class="btn btn-success" href="@routes.ReportesController.reporteResponsabilidadUser">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Responsabilidad material
+            </a></li></h2>
+            <h2><li><a class="btn btn-success" href="@routes.ReportesController.reporteTrabajadoresUser">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Trabajadores de la entidad
+            </a></li></h2>
+
+        </div>
+    </main>
+
+    <footer>
+        <h2><p id="regresar"> <a href="@routes.LoginController.login">Cerrar Sesion </a></p></h2>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+@(form: Form[acceso.Role.Data])(implicit request: MessagesRequestHeader,flash: Flash)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/login.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/login.css" />
+    <title>Inicio</title>
+</head>
+<body>
+@if(form.hasGlobalErrors) {
+        @form.globalErrors.map { error: FormError =>
+            <div>
+                @error.key: @error.message
+            </div>
+        }
+}
+    <div class="box">
+        @helper.form(routes.LoginController.acceder) {
+        @helper.CSRF.formField
+        <div id="tfuser">
+            @helper.inputText(form("Usuario"))
+            @helper.inputPassword(form("Contrasena"))
+        </div>
+    <button id="btn_acc">Acceder</button>
+    }
+    </div>
+    <div id="msg">
+    @flash.get("error").getOrElse("Bienvenido")
+    </div>
+</body>
+</html>

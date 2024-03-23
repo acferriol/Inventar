@@ -1,0 +1,28 @@
+@(url:String,list:List[models.v_historial])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tablas.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/tablas.css" />
+    <title>Historial de Articulos</title>
+</head>
+<body>
+<header>
+    <h3><a href=@url>volver<<<</a></h3>
+</header>
+<table>
+  <tr>
+    <th><h3>Codigo</h3></th>
+    <th><h3>Fecha Baja</h3></th>
+    <th><h3>Nombre</h3></th>
+  </tr>
+  @for(x <- list){
+  <tr>
+    <td><h4>@x.codigo</h4></td>
+    <td><h4>@x.fecha_baja</h4></td>
+    <td><h4>@x.nombre</h4></td>
+  </tr>
+  }</table>
+</body>
+</html>

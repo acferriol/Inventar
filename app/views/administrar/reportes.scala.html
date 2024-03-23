@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/reportes.css")">
+        <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/reportes.css" />
+        <link rel = "stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <title>REPORTES</title>
+    </head>
+	
+    <body>
+	
+        <header>
+            <h1>Ver Reporte de:</h1>
+        </header>
+
+
+        <main>
+            <div class = "container">
+                <h2><li> <a <a class="btn btn-success" href="@routes.ReportesController.reporteDepartamentosRoot">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Departamentos de la entidad </a></li></h2>
+                <h2><li> <a <a class="btn btn-success" href="@routes.ReportesController.reporteHistorialRoot">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Historial de articulos</a></li></h2>
+                <h2><li> <a <a class="btn btn-success" href="@routes.ReportesController.reporteResponsabilidadRoot">
+                <i class="glyphicon glyphicon-plus-sign"></i>
+                Responsabilidad material </a></li></h2>
+                <h2><li> <a <a class="btn btn-success" href="@routes.ReportesController.reporteTrabajadoresRoot">
+                <i class="glyphicon-plus-sign"></i>
+                Trabajadores de la entidad </a></li></h2>
+            </div>
+        </main>
+
+        <footer>
+            <h2><p id="regresar"> <a href="@routes.AdminController.inicioRoot">volver a opciones<<< </a></p></h2>
+        </footer>
+
+    </body>
+
+</html>

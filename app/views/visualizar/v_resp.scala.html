@@ -1,0 +1,29 @@
+@(url:String,list:List[models.v_responsabilidad])
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/tablas.css")">
+    <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/tablas.css" />
+    <title>Responsabilidad Material</title>
+</head>
+<body>
+<header>
+    <h3><a href=@url>volver<<<</a></h3>
+</header>
+<table>
+  <tr>
+    <th><h3>Codigo</h3></th>
+    <th><h3>Nombre Articulo</h3></th>
+    <th><h3>Responsable</h3></th>
+  </tr>
+  @for(x <- list){
+  <tr>
+    <td><h4>@x.cod_art</h4></td>
+    <td><h4>@x.nombre_art</h4></td>
+    <td><h4>@x.responsable</h4></td>
+  </tr>
+  }
+</table>
+</body>
+</html>

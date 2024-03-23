@@ -1,0 +1,56 @@
+@(trab:models.trabajador,form: Form[models.trabajador],lis1:List[(String,String)],lis2:List[(String,String)])(implicit request: MessagesRequestHeader,flash: Flash)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/insertar.css")">
+        <link rel=”stylesheet” type=”text/css” title=”Some title” href= "stylesheets/insertar.css" />
+	    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/bootstrap.min.css")">
+        <title>Actualizar Trabajador</title>
+    </head>
+    <body>
+        @if(form.hasGlobalErrors) {
+            @form.globalErrors.map { error: FormError =>
+            <div>
+            @error.key: @error.message
+            </div>
+            }
+        }
+
+        <header>
+            <h2><p id="regresar"> <a href="@routes.ModifController.modificarTrabajador">volver<<< </a></p></h2>
+        </header>
+
+        <main>
+            <div id="msgs">
+                <h3>@flash.get("success").getOrElse("Edite Trabajador")</h3>
+                <h3>@flash.get("error").getOrElse("")</h3>
+            </div>
+
+            <div class="box">
+                @helper.form(routes.ModifController.updateTrabajador(trab.ct)) {
+                <h1>Modificar Trabajador</h1>
+                @helper.CSRF.formField
+                <div id="esencial">
+                    @helper.inputText(form("carnet").copy(value=Some(trab.ct)))
+                    @helper.inputText(form("nombre").copy(value=Some(trab.nombre)))
+                    @helper.inputText(form("apellidos").copy(value=Some(trab.apellidos)))
+                </div>
+                <div id="datos">
+                    @helper.textarea(form("direccion").copy(value=Some(trab.direccion)))
+                    @helper.inputText(form("telefono").copy(value=Some(trab.telefono.toString)))
+                    @helper.inputRadioGroup(form("sexo").copy(value=Some(trab.sexo.toString.toUpperCase)),options = List("M"->"M","F"->"F"))
+                </div>
+                <div id="otros">
+                    @helper.select(form("nombre_departamento").copy(value=Some(trab.nombre_dpto)), options=lis1)
+                    @helper.select(form("local de trabajo").copy(value=Some(trab.loc_trab)), options=lis2)
+                </div>
+
+                <button class="btn btn-primary">Modificar</button>
+                }
+            </div>
+	    </main>
+
+    </body>
+
+</html>
