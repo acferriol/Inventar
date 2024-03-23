@@ -1,0 +1,158 @@
+input, textarea {
+    border: 1px solid;
+    border-color: #666 #ccc #ccc #666;
+}
+body{
+    background: #D0E7EF
+}
+main {
+	text-align: center;
+}
+
+.box{
+	width:864px;
+	text-align: center;
+    margin: 0 auto;
+    background-color:#D0E7EF;
+    display:flex;
+    border: 2px solid;
+    border-color: #666 black black #666;
+	padding-bottom: 5px;
+}
+label {
+    font-size:20px;
+    line-height:16px;
+}
+.info {
+    font-size:14px;
+    color:red;
+}
+select{
+    color:blue;
+    position: relative;
+}
+
+#esencial{
+	width: 864px;
+	text-align: center;
+    display:flex;
+}
+
+#carnet_field{
+    display:inline;
+    margin: 5px auto 25px 5px;
+}
+
+#nombre_field{
+    display:inline;
+    margin: 5px auto 25px 5px;
+}
+#apellidos_field{
+    display:inline;
+    margin: 5px auto 25px 5px;
+}
+
+#datos{
+	width: 864px;
+	text-align: center;
+    display:flex;
+}
+
+#direccion_field{
+    display:inline;
+    margin: 5px auto 25px 5px;
+}
+
+#telefono_field{
+    display:inline;
+    margin: 5px auto 25px 5px;
+}
+
+#sexo_field{
+	display:inline;
+    margin: 5px auto 25px 5px;
+}
+
+#otros{
+	display:flex;
+}
+
+#nombre_departamento_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+#local\ de\ trabajo_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#cod_local_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#nombre_local_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#tipo_local_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#objetivo_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#al\ frente_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#codigo_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#descripcion_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#estado_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#valor_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#ultimo_mantenimiento_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#prox_mantenimiento_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#responsable_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+#ubicacion_field{
+	display:inline;
+    margin: 5px auto 25px auto;
+}
+
+
+
+
+
+

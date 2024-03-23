@@ -1,0 +1,27 @@
+body{background: #1234}
+.box{
+    width:250px;
+    high:300px;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    margin-left:-75px;
+    margin-top:-75px;
+    background: #123;
+    font-family:Arial;
+    border: solid black;
+    font: white;
+	padding-right:5px;
+}
+#tfuser{color: white;}
+#btn_acc{
+    color: blue;
+    margin-left:90px
+}
+#msg{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    margin-left:-75px;
+    margin-top:-92px
+}

@@ -1,0 +1,13 @@
+.container{
+    display:flex-block;
+    margin: 0,auto;
+    position: center;
+
+}
+.h2{
+   margin: 0,auto;
+}
+
+footer {
+	margin-left:10px;	
+}

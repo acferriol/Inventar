@@ -1,0 +1,25 @@
+body{
+    background: #aaa
+}
+td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.1em 1em;
+    border: 10px solid #ccc;
+}
+col.alternative {
+    background-color: #ddf;
+}
+table {
+    border-collapse: collapse;
+    table-layout: auto;
+    width: 100%;
+    border: 10px solid #ccc;
+}
+th {
+    border: 10px solid #ccc;
+}
+#test{
+    background-color: #aaa;
+    border: #aaa
+}

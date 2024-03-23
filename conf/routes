@@ -1,0 +1,74 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+#LOGIN
+   GET     /                           controllers.HomeController.index()
+        GET     /login                      controllers.LoginController.login
+        POST    /login                      controllers.LoginController.acceder
+#USER
+   GET     /user                       controllers.UserController.inicioUser
+        GET     /user/departamentos         controllers.ReportesController.reporteDepartamentosUser
+        GET     /user/historial             controllers.ReportesController.reporteHistorialUser
+        GET     /user/responsabilidad       controllers.ReportesController.reporteResponsabilidadUser
+        GET     /user/trabajadores          controllers.ReportesController.reporteTrabajadoresUser
+#ROOT
+   GET     /root                       controllers.AdminController.inicioRoot
+      #INSERTAR
+      GET      /root/insertar                    controllers.AdminController.insertar
+        #TRABAJADOR
+        GET      /root/insertar/nuevoTrabajador    controllers.InsertController.nuevoTrabajador
+        POST     /root/insertar/nuevoTrabajador    controllers.InsertController.addTrabajador
+        #DEPARTAMENTO
+        GET      /root/insertar/nuevoDepartamento  controllers.InsertController.nuevoDepartamento
+        POST     /root/insertar/nuevoDepartamento  controllers.InsertController.addDepartamento
+        #LOCAL
+        GET      /root/insertar/nuevoLocal         controllers.InsertController.nuevoLocal
+        POST     /root/insertar/nuevoLocal         controllers.InsertController.addLocal
+        #ARTICULO
+        GET      /root/insertar/nuevoArticulo      controllers.InsertController.nuevoArticulo
+        POST     /root/insertar/nuevoArticulo      controllers.InsertController.addArticulo
+
+      #MODIFICAR
+      GET        /root/modificar                 controllers.AdminController.modificar
+        #ARTICULO
+        GET      /root/modificar/articulo               controllers.ModifController.modificarArticulo
+        GET      /root/articulo/:coda                   controllers.ModifController.detalleArticulo(coda:String)
+        POST     /root/articulo/:coda                   controllers.ModifController.updateArticulo(coda:String)
+        #LOCAL
+        GET      /root/modificar/local                  controllers.ModifController.modificarLocal
+        GET      /root/local/:cod                       controllers.ModifController.detalleLocal(cod:String)
+        POST     /root/local/:cod                       controllers.ModifController.updateLocal(cod:String)
+        #DEPARTAMENTO
+        GET      /root/modificar/departamento           controllers.ModifController.modificarDepartamento
+        GET      /root/departamento/:name               controllers.ModifController.detalleDepartamento(name:String)
+        POST     /root/departamento/:name               controllers.ModifController.updateDepartamento(name:String)
+        #TRABAJADOR
+        GET      /root/modificar/trabajador             controllers.ModifController.modificarTrabajador
+        GET      /root/trabajador/:ct                   controllers.ModifController.detalleTrabajador(ct:String)
+        POST     /root/trabajador/:ct                   controllers.ModifController.updateTrabajador(ct:String)
+      #ELIMINAR
+      GET      /root/eliminar                      controllers.AdminController.eliminar
+        #ARTICULO
+        GET     /root/eliminar/articulo                 controllers.ElimController.eliminarArticulo
+        POST    /root/eliminar/articulo                 controllers.ElimController.deleteArticulo
+        #LOCAL
+        GET     /root/eliminar/local                    controllers.ElimController.eliminarLocal
+        POST    /root/eliminar/local                    controllers.ElimController.deleteLocal
+        #DEPARTAMENTO
+        GET     /root/eliminar/departamento             controllers.ElimController.eliminarDepartamento
+        POST    /root/eliminar/departamento             controllers.ElimController.deleteDepartamento
+        #TRABAJADOR
+        GET     /root/eliminar/trabajador               controllers.ElimController.eliminarTrabajador
+        POST    /root/eliminar/trabajador               controllers.ElimController.deleteTrabajador
+
+      #VISUALIZAR
+      GET      /root/reportes                          controllers.AdminController.reportes
+        GET      /root/reportes/trabajadores             controllers.ReportesController.reporteTrabajadoresRoot
+        GET      /root/reportes/responsabilidad          controllers.ReportesController.reporteResponsabilidadRoot
+        GET      /root/reportes/departamentos            controllers.ReportesController.reporteDepartamentosRoot
+        GET      /root/reportes/historial                controllers.ReportesController.reporteHistorialRoot
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
